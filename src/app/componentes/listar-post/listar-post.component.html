@@ -1,0 +1,19 @@
+<ul class="list-group">
+  <li *ngFor="let post of posts | async" class="list-group-item active">
+
+    <div class="card text-white bg-primary">
+      <img class="card-img-top" src="" alt="">
+      <div class="card-body">
+        <h4 class="card-title">{{post.id}}</h4>
+        <p class="card-text">{{post.text}}</p>
+      </div>
+      <div class="card-footer">
+        <button (click)="removePost(post.id)" class="btn btn-danger"> delete</button>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<!-- <div class="container" *ngIf="(posts | async).length == 0">
+  <h1 class="text-danger">no hay post</h1>
+</div> -->
